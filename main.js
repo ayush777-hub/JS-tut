@@ -76,8 +76,10 @@ function addsign() {
                 Body = document.body;
                 result_msg = document.createElement("div");
                 result_msg.innerHTML = "<h1>PLAYER 1 WINS!!!</h1>";
-                result_msg.className = "Res_msg";
+                result_msg.id = "Res_msg";
                 Body.appendChild(result_msg);
+                body_content = document.getElementsByTagName("body");
+                console.log(Array.from(body_content)[0].children);
                 removefunc();
             }
             else{
@@ -91,8 +93,10 @@ function addsign() {
                     Body = document.body;
                     result_msg = document.createElement("div");
                     result_msg.innerHTML = "<h1>TIE!!!</h1>";
-                    result_msg.className = "Res_msg";
+                    result_msg.id = "Res_msg";
                     Body.appendChild(result_msg);
+                    body_content = document.getElementsByTagName("body");
+                    console.log(Array.from(body_content)[0].children);
                     removefunc();
                 }
             }
@@ -108,8 +112,10 @@ function addsign() {
                 Body = document.body;
                 result_msg = document.createElement("h1");
                 result_msg.innerText = "PLAYER 2 WINS!!!";
-                result_msg.className = "Res_msg";
+                result_msg.id = "Res_msg";
                 Body.appendChild(result_msg);
+                body_content = document.getElementsByTagName("body");
+                console.log(Array.from(body_content)[0].children);
                 removefunc();
                 //break;
             }
@@ -123,9 +129,12 @@ function addsign() {
                 if (flag===0) {
                     Body = document.body;
                     result_msg = document.createElement("div");
-                    result_msg.innerHTML = "<h1>TIE!!!</h1>";
-                    result_msg.className = "Res_msg";
+                    result_msg.innerHTML = `<h1 id="testing">TIE!!!</h1>`;
+
+                    result_msg.id = "Res_msg";
                     Body.appendChild(result_msg);
+                    body_content = document.getElementsByTagName("body");
+                    console.log(Array.from(body_content)[0].children);
                     removefunc();
                 }
             }
@@ -161,7 +170,8 @@ function reset_cell(params) {               //when reset button is clicked it cl
         //console.log(element);
         element.addEventListener("click", addsign);
     });
-    body_content = document.getElementsByTagName("body");
-    console.log(Array.from(body_content)[0].children);
-    body_content[0].removeChild(Array.from(body_content)[0].children[6]);
+    //console.log(`body:${(Array.from(document.getElementsByTagName('body'))).length}`)
+    let result_im = document.getElementById("Res_msg");
+    console.log(result_im.innerText);
+    result_im.remove();
 }

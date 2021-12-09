@@ -9,12 +9,11 @@ body{
   z-index: -1;
 }
 
-.Res_msg {
+#Res_msg {
   display: flex;
   justify-content: center;
   justify-items: center;
   align-items: center;
-
   color: cornsilk;
 }
 
