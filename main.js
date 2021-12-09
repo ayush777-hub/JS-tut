@@ -162,6 +162,6 @@ function reset_cell(params) {               //when reset button is clicked it cl
         element.addEventListener("click", addsign);
     });
     body_content = document.getElementsByTagName("body");
-    //console.log(Array.from(body_content)[0].children);
+    console.log(Array.from(body_content)[0].children);
     body_content[0].removeChild(Array.from(body_content)[0].children[6]);
 }
